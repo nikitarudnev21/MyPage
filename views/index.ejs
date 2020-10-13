@@ -33,7 +33,7 @@
                             <p>Total cases: <%= oct12.total_deaths %></p>
                         </div>
                     </div>
-            
+                    <h2 style="text-align: center;">Every day info</h2>
                 <div class="row" style ="margin-left: 50px;">
                         <table class="table table-sm">
                             <thead>
@@ -41,12 +41,12 @@
                                     <th scope="col">Date</th>
                                     <th scope="col">Cases</th>
                                     <th scope="col">Total cases</th>
-                                    <th scope="col">Recoveries</th>
-                                    <th scope="col">Deaths</th>
+                                    <th scope="col">Total Recoveries</th>
+                                    <th scope="col">Total Deaths</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <% dates.forEach(d=> { %>
+                            <% dates.reverse().forEach(d=> { %>
                                 <tr>
                                         <td><%= d[0] %></td>
                                         <td><%= d[1].new_daily_cases %></td>
