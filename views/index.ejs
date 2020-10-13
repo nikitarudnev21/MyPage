@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Corona API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+          <% if(countryData.timelineitems[0].stat.trim().toLowerCase()==="ok"){ %>
+            <div class="container">
+                    <nav class="navbar">
+                        <a href="https://api.thevirustracker.com/free-api?countryTimeline=EE" class="navbar-brand">API</a>
+                    </nav>
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Country: <%= countryData.countrytimelinedata[0].info.title %> <b><%= countryData.countrytimelinedata[0].info.code %></b></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">12 October</h4>
+                            <p>Date: <%= cDate %></p>
+                            <p>Cases: <%= oct12.new_daily_cases %></p>
+                            <p>Deaths: <%= oct12.new_daily_deaths %></p>
+                            <p>Total cases: <%= oct12.total_cases %></p>
+                            <p>Recoveries: <%= oct12.total_recoveries %></p>
+                            <p>Total cases: <%= oct12.total_deaths %></p>
+                        </div>
+                    </div>
+            
+                <div class="row" style ="margin-left: 50px;">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Cases</th>
+                                    <th scope="col">Total cases</th>
+                                    <th scope="col">Recoveries</th>
+                                    <th scope="col">Deaths</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% dates.forEach(d=> { %>
+                                <tr>
+                                        <td><%= d[0] %></td>
+                                        <td><%= d[1].new_daily_cases %></td>
+                                        <td><%= d[1].total_cases %></td>
+                                        <td><%= d[1].total_recoveries %></td>
+                                        <td><%= d[1].total_deaths %></td>
+                                    </tr>
+                             <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+          <% } else{ %>  
+            <h1>Oops! Something goes wrong</h1>
+         <% } %>
+</body>
+</html>
