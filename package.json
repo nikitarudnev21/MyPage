@@ -1,7 +1,7 @@
 {
-  "name": "coronaapi",
+  "name": "mypage",
   "version": "1.0.0",
-  "description": "Corona API",
+  "description": "My CV page",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
