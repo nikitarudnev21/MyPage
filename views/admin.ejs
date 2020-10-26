@@ -7,22 +7,56 @@
     <title>Admn Panel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <form action="/admin" method="POST">
+            <form>
                 <div class="form-group">
-                    <label for="name">First Name</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" name="firstName" required>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName">
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" min="0" max="200" name="age" value="18" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="birthday">Birthday</label>
+                    <input type="date" required class="form-control" name="birthday">
+                </div>
+                <div class="form-group">
+                    <label for="introduction">Self introduction</label>
+                    <textarea name="introduction" rows="6" cols="80" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">Image URL</label>
+                    <textarea name="imageUrl" rows="2" cols="40" class="form-control"></textarea>
+                </div>
+                <div class="form-group logic">
+                    <input type="text" placeholder="skill name" class="form-control" id="skillName">
+                    <label for="Soft">Soft</label>
+                    <input type="radio" name="Soft" id="Soft" value="Soft" class="skills"><br>
+                    <label for="Technical">Technical</label>
+                    <input type="radio" name="Technical" id="Technical" value="Technical" class="skills"><br>
+                    <button class="btn btn-primary" id="addSkill">Add Skill</button>
+                </div>
+                <div class="form-group">
+                    <label for="softSkills">Soft Skills</label>
+                    <div class="skill-collection" id="softSkills" name="softSkills"></div>
+                </div>
+                <div class="form-group">
+                    <label for="technicalSkills">Technical skills</label>
+                    <div class="skill-collection" id="technicalSkills" name="technicalSkills"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-send">Submit</button>
             </form>
         </div>
     </div>
+    <script src="js/adminLogic.js"></script>
 </body>
 </html>

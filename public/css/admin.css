@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.skill-collection {
+    padding: 7px;
+    width: 700px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.skil {
+    background-color: #294B27;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    width: 200px;
+    color: #FBAF76;
+    margin-left: 5px;
+}
+
+.remove-skill {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+}
+
+.remove-skill:hover {
+    cursor: pointer;
+}
