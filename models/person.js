@@ -15,4 +15,12 @@ module.exports = class Person {
             }
         });
     }
+    static readData(cb){
+        fs.readFile(p, (err, fileContent) =>{
+            if (err) {
+                cb([]);
+            }
+            cb(JSON.parse(fileContent));
+        });
+    }
 }

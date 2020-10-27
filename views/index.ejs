@@ -1,7 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nikita Rudnev</title>
+</head>
 <body>
-
+    <h1>Hello World</h1>
+    <table>
+        <thead>
+                <% Object.keys(persons[0]).map(key=>{ %>
+                    <th><%= key %></th>
+               <% }) %>
+        </thead>
+        <tbody>
+                <% persons.reverse().forEach(d=> { %>
+                    <tr>
+                            <% Object.values(d).map(d=>{%> 
+                                <td><%= d %></td>
+                            <% }) %> 
+                        </tr>
+                 <% }) %>
+        </tbody>
+    </table>
+    <script>
+            const ths = document.querySelectorAll('th');
+            ths.forEach(th=>{
+                th.onclick = () => {
+                    const str = th.innerText;
+                    const sL = th.length;
+                    const i = 0;
+                    for (; i < sL; i++) {
+                        if (str.charAt(i) === str.charAt(i).toUpperCase()) {
+                            console.log('uppercase:',str.charAt(i));
+                        }
+                    }
+                }
+            })
+    </script>
 </body>
 </html>
