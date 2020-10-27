@@ -1,3 +1,4 @@
+//import {request} from './request';
 const request = async (url, method = 'GET', data = null) => {
     try {
         const headers = {}
@@ -18,7 +19,6 @@ const request = async (url, method = 'GET', data = null) => {
         console.warn('Error:', e.message)
     }
 }
-
 const addSkill = document.querySelector("#addSkill");
 let skills = [];
 addSkill.addEventListener("click", e => {

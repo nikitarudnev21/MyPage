@@ -23,4 +23,17 @@ module.exports = class Person {
             cb(JSON.parse(fileContent));
         });
     }
+
+    static deletePerson(id) {
+        fs.readFile(p, (err, fileContent) => {
+            if (!err) {
+                const myData = JSON.parse(fileContent);
+                myData.peoples = myData.peoples.filter(people=>people.id!==id);
+                fs.writeFile(p, JSON.stringify(myData), err => console.log(err))
+            }
+            else{
+                console.log("eeeeerrrr");
+            }
+        });
+    }
 }
